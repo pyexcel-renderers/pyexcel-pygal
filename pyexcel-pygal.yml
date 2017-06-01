@@ -1,0 +1,8 @@
+overrides: "pyexcel.yaml"
+name: "pyexcel-pygal"
+nick_name: "pygal"
+version: "0.0.1"
+release: "0.0.1"
+dependencies:
+  - pygal
+description: "draw simple svg chart via pygal"
