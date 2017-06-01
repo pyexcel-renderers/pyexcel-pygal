@@ -1,5 +1,5 @@
 ================================================================================
-pyexcel-pygal - Let you focus on data, instead of file formats
+pyexcel-pygal - Let you focus on presentation with pygal
 ================================================================================
 
 .. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
