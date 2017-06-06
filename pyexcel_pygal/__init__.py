@@ -1,4 +1,4 @@
-from pyexcel_chart.plugin import ChartPluginChain
+from pyexcel.internal.common import ChartPluginChain
 
 
 ChartPluginChain(__name__).add_a_plugin(
