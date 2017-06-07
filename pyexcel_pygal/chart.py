@@ -141,6 +141,8 @@ class XY(Chart):
         for sheet in to_book(book):
             points = zip(sheet.column[x_in_column],
                          sheet.column[y_in_column])
+            if not PY2:
+                points = list(points)
             instance.add(sheet.name, points)
         chart_content = instance.render()
         return chart_content
