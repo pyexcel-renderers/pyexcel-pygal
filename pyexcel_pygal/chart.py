@@ -9,11 +9,10 @@
 """
 import sys
 import pygal
-from functools import partial
 
 from lml.plugin import PluginInfo, PluginManager
 
-from pyexcel.renderer import Renderer
+from pyexcel.renderer import BinaryRenderer
 
 
 PY2 = sys.version_info[0] == 2
@@ -31,12 +30,6 @@ CHART_TYPES = dict(
     funnel='Funnel',
     xy='XY',
     histogram='Histogram')
-
-
-if PY2:
-    from StringIO import StringIO as BytesIO
-else:
-    from io import BytesIO
 
 
 class Chart(object):
@@ -67,7 +60,8 @@ class SimpleLayout(Chart):
 
 
 @PluginInfo('chart',
-          tags=['line', 'bar', 'stacked_bar', 'radar', 'dot', 'funnel'])
+            tags=['line', 'bar', 'stacked_bar',
+                  'radar', 'dot', 'funnel'])
 class ComplexLayout(Chart):
 
     def render_sheet(self, sheet, title=DEFAULT_TITLE,
@@ -164,23 +158,11 @@ class ChartManager(PluginManager):
     def raise_exception(self, key):
         raise Exception("No support for " + key)
 
+
 MANAGER = ChartManager()
 
-class ChartRenderer(Renderer):
 
-    def __init__(self, file_type):
-        Renderer.__init__(self, file_type)
-        if not PY2:
-            self.WRITE_FLAG = 'wb'
-
-    def get_io(self):
-        io = BytesIO()
-
-        def repr_svg(self):
-            return self.getvalue().decode('utf-8')
-
-        io._repr_svg_ = partial(repr_svg, io)
-        return io
+class ChartRenderer(BinaryRenderer):
 
     def render_sheet(self, sheet, title=DEFAULT_TITLE,
                      chart_type=DEFAULT_CHART_TYPE,
