@@ -1,0 +1,20 @@
+{%include "header.rst.jj2"%}
+
+Introduction
+-------------
+
+**{{name}}** is a tiny plugin of pyexcel to turn pyexcel data into 
+chart graphics using pygal
+
+Installation
+-------------
+
+{%include "installation.rst.jj2" %}
+
+Content
+-----------
+
+.. toctree::
+
+  charts
+  usage
