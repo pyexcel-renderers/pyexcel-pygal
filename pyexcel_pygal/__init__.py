@@ -7,7 +7,7 @@
     :copyright: (c) 2016-2017 by Onni Software Ltd.
     :license: New BSD License, see LICENSE for further details
 """
-from pyexcel.internal.common import PyexcelPluginChain
+from pyexcel.plugins import PyexcelPluginChain
 
 
 PyexcelPluginChain(__name__).add_a_renderer(
