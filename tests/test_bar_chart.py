@@ -171,4 +171,4 @@ def _validate_and_remove(file_name):
 
 
 def _fixture_file(file_name):
-    return os.path.join("tests", "fixtures", file_name)
+    return os.path.join("docs", "source", "_static", file_name)
