@@ -10,7 +10,7 @@ Line
 		   
 Here is the source code using pyexcel:
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 15-30
    :dedent: 4
 
@@ -27,7 +27,7 @@ Histogram
 		   
 Here is the source code using pyexcel:
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 35-44
    :dedent: 4
 
@@ -48,7 +48,7 @@ Basic XY Lines, drawing cosinus:
 		   
 Here is the source code using pyexcel:
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 50-64
    :dedent: 4
 
@@ -66,7 +66,7 @@ Pie chart
 		   
 Here is the source code using pyexcel:
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 69-82
    :dedent: 4
 
@@ -82,7 +82,7 @@ Radar chart
 		   
 Here is the source code using pyexcel:
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 87-104
    :dedent: 4
 
@@ -98,7 +98,7 @@ Box chart
 		   
 Here is the source code using pyexcel:
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 109-121
    :dedent: 4
 
@@ -116,7 +116,7 @@ Dot chart
 Here is the source code using pyexcel:
 
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 126-143
    :dedent: 4
 
@@ -132,7 +132,7 @@ Funnel chart
 		   
 Here is the source code using pyexcel:
 
-.. literalinclude:: ../../tests/test_bar_chart.py
+.. literalinclude:: ../../tests/test_pygal.py
    :lines: 148-163
    :dedent: 4
 
