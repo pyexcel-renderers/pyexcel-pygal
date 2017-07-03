@@ -1,7 +1,5 @@
-https://github.com/chfw/lml/archive/master.zip
-https://github.com/pyexcel/pyexcel-io/archive/v0.4.x.zip
-https://github.com/pyexcel/pyexcel/archive/master.zip
-https://github.com/pyexcel/pyexcel-xls/archive/v0.4.x.zip
-https://github.com/pyexcel/pyexcel-handsontable/archive/master.zip
-https://github.com/pyexcel/sphinxcontrib-excel/archive/master.zip
+pyexcel
+pyexcel-xls
+pyexcel-handsontable
+sphinxcontrib-excel
 
