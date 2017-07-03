@@ -5,4 +5,5 @@ coverage
 flake8
 pyexcel
 pyexcel-xls
+sphinx
 docutils
