@@ -2,6 +2,7 @@
 
 {%block SPHINX_EXTENSIONS%}
     'sphinx.ext.autosummary',
+    'sphinxcontrib.excel',
     'sphinxcontrib.spelling'
 {%endblock%}
 
@@ -14,4 +15,3 @@ def setup(app):
 
 
 {%endblock%}
-
