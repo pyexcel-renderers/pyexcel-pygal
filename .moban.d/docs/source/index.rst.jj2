@@ -16,5 +16,5 @@ Content
 
 .. toctree::
 
-  charts
   usage
+  charts

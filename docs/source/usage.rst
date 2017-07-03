@@ -1,4 +1,4 @@
-Usage
+Plot pyexcel data in Jupyter Notebook
 ================================================================================
 
 There are currently four type of data layouts for rendering charts.
