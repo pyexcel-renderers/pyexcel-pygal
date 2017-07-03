@@ -2,4 +2,4 @@ pyexcel
 pyexcel-xls
 pyexcel-handsontable
 sphinxcontrib-excel
-
+sphinxcontrib-spelling
