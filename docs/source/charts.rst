@@ -34,6 +34,22 @@ Here is the source code using pyexcel:
 
 Here is the source code `using pygal.Histogram directly <http://pygal.org/en/stable/documentation/types/histogram.html#basic>`_
 
+
+Single histogram
+********************************************************************************
+
+.. image:: _static/single_histogram.svg
+   :width: 600px
+   :height: 400px
+		   
+Here is the source code to draw single sheet histogram:
+
+.. literalinclude:: ../../tests/test_pygal.py
+   :lines: 168-176
+   :dedent: 4
+
+
+
 XY
 --------------------------------------------------------------------------------
 
@@ -54,7 +70,18 @@ Here is the source code using pyexcel:
 
 Here is the source code `using pygal <http://pygal.org/en/stable/documentation/types/xy.html#basic>`_
 
+Single xy line
+********************************************************************************
 
+.. image:: _static/single_xy_cosinus.svg
+   :width: 600px
+   :height: 400px
+		   
+Here is the source code to draw single sheet histogram:
+
+.. literalinclude:: ../../tests/test_pygal.py
+   :lines: 181-191
+   :dedent: 4
 
 Pie chart
 --------------------------------------------------------------------------------

@@ -5,7 +5,6 @@ from nose.tools import eq_
 
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
-
 if PY26:
     from ordereddict import OrderedDict
 else:
@@ -163,6 +162,34 @@ def test_funnel():
         dest_no_prefix=True
     )
     _validate_and_remove('funnel.svg')
+
+
+def test_single_histogram():
+    data = {
+        'Wide bars': [(5, 0, 10), (4, 5, 13), (2, 0, 15)],
+    }
+    pe.save_book_as(
+        bookdict=data,
+        dest_chart_type='histogram',
+        dest_file_name='single_histogram.svg',
+        dest_no_prefix=True
+    )
+    _validate_and_remove('single_histogram.svg')
+
+
+def test_xy_line():
+    from math import cos
+    data = {
+        'x = cos(y)': [(cos(x / 10.), x / 10.) for x in range(-50, 50, 5)],
+    }
+    pe.save_book_as(
+        bookdict=data,
+        dest_chart_type='xy',
+        dest_title='XY Cosinus',
+        dest_file_name='single_xy_cosinus.svg',
+        dest_no_prefix=True
+    )
+    _validate_and_remove('single_xy_cosinus.svg')
 
 
 def _validate_and_remove(file_name):
