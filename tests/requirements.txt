@@ -8,3 +8,5 @@ pyexcel
 pyexcel-xls
 sphinx
 docutils
+nbformat
+nbconvert
