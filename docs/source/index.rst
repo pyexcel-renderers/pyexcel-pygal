@@ -12,7 +12,10 @@ Introduction
 -------------
 
 **pyexcel-pygal** is a tiny plugin of pyexcel to turn pyexcel data into 
-chart graphics using pygal
+chart graphics using pygal.
+
+To see pyexcel-pygal in action with Jupyter notebook, please checkout the resource
+on `github folder <https://github.com/pyexcel/pyexcel-pygal/tree/master/notebook>`_
 
 Installation
 -------------
