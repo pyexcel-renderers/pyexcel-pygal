@@ -8,5 +8,8 @@ pyexcel
 pyexcel-xls
 sphinx
 docutils
+jupyter
+jupyter-client
 nbformat
 nbconvert
+pyexcel-text
