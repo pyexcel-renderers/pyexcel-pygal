@@ -13,3 +13,4 @@ jupyter-client
 nbformat
 nbconvert
 pyexcel-text
+https://github.com/pyexcel/pyexcel-pygal/archive/master.zip
