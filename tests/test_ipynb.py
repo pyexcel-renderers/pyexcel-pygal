@@ -36,5 +36,9 @@ def _notebook_run(path):
 
 
 def test_ipynb():
-    nb, errors = _notebook_run('notebook/life_expectancy.ipynb')
-    assert errors == []
+    if PY2:
+        print("Ignored ipynb tests in python 2")
+        pass
+    else:
+        nb, errors = _notebook_run('notebook/life_expectancy.ipynb')
+        assert errors == []
