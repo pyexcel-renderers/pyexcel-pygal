@@ -212,4 +212,7 @@ def _get_svg_graph_element(file_name):
 
 
 def _fixture_file(file_name):
-    return os.path.join("docs", "source", "_static", file_name)
+    if PY2:
+        return os.path.join("tests", "fixtures", file_name)
+    else:
+        return os.path.join("docs", "source", "_static", file_name)
