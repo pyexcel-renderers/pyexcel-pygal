@@ -165,11 +165,11 @@ def test_funnel():
 
 
 def test_single_histogram():
-    data = {
-        'Wide bars': [(5, 0, 10), (4, 5, 13), (2, 0, 15)],
-    }
-    pe.save_book_as(
-        bookdict=data,
+    sheet_name = 'Wide bars'
+    data = [(5, 0, 10), (4, 5, 13), (2, 0, 15)]
+    pe.save_as(
+        array=data,
+        sheet_name=sheet_name,
         dest_chart_type='histogram',
         dest_file_name='single_histogram.svg',
         dest_no_prefix=True
@@ -179,11 +179,11 @@ def test_single_histogram():
 
 def test_xy_line():
     from math import cos
-    data = {
-        'x = cos(y)': [(cos(x / 10.), x / 10.) for x in range(-50, 50, 5)],
-    }
-    pe.save_book_as(
-        bookdict=data,
+    sheet_name = 'x = cos(y)'
+    data = [(cos(x / 10.), x / 10.) for x in range(-50, 50, 5)]
+    pe.save_as(
+        array=data,
+        sheet_name=sheet_name,
         dest_chart_type='xy',
         dest_title='XY Cosinus',
         dest_file_name='single_xy_cosinus.svg',

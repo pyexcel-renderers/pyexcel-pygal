@@ -91,12 +91,12 @@ class Histogram(Chart):
                      height_in_column=0, start_in_column=1,
                      stop_in_column=2,
                      **keywords):
-        histograms = zip(sheet.column[height_in_column],
-                         sheet.column[start_in_column],
-                         sheet.column[stop_in_column])
         cls = getattr(pygal, self._chart_class)
         instance = cls(title=title, **keywords)
-        instance.add(sheet.name, histograms)
+        self._render_a_sheet(instance, sheet,
+                             height_in_column=height_in_column,
+                             start_in_column=start_in_column,
+                             stop_in_column=stop_in_column)
         chart_content = instance.render()
         return chart_content
 
@@ -108,14 +108,22 @@ class Histogram(Chart):
         cls = getattr(pygal, self._chart_class)
         instance = cls(title=title, **keywords)
         for sheet in to_book(book):
-            histograms = zip(sheet.column[height_in_column],
-                             sheet.column[start_in_column],
-                             sheet.column[stop_in_column])
-            if PY2 is False:
-                histograms = list(histograms)
-            instance.add(sheet.name, histograms)
+            self._render_a_sheet(instance, sheet,
+                                 height_in_column=height_in_column,
+                                 start_in_column=start_in_column,
+                                 stop_in_column=stop_in_column)
         chart_content = instance.render()
         return chart_content
+
+    def _render_a_sheet(self, instance, sheet,
+                        height_in_column=0, start_in_column=1,
+                        stop_in_column=2):
+        histograms = zip(sheet.column[height_in_column],
+                         sheet.column[start_in_column],
+                         sheet.column[stop_in_column])
+        if PY2 is False:
+            histograms = list(histograms)
+        instance.add(sheet.name, histograms)
 
 
 @PluginInfo('chart', tags=['xy'])
@@ -127,6 +135,9 @@ class XY(Chart):
                      **keywords):
         cls = getattr(pygal, self._chart_class)
         instance = cls(title=title, **keywords)
+        self._render_a_sheet(instance, sheet,
+                             x_in_column=x_in_column,
+                             y_in_column=y_in_column)
         points = zip(sheet.column[x_in_column],
                      sheet.column[y_in_column])
         instance.add(sheet.name, points)
@@ -141,13 +152,21 @@ class XY(Chart):
         cls = getattr(pygal, self._chart_class)
         instance = cls(title=title, **keywords)
         for sheet in to_book(book):
-            points = zip(sheet.column[x_in_column],
-                         sheet.column[y_in_column])
-            if not PY2:
-                points = list(points)
-            instance.add(sheet.name, points)
+            self._render_a_sheet(instance, sheet,
+                                 x_in_column=x_in_column,
+                                 y_in_column=y_in_column)
         chart_content = instance.render()
         return chart_content
+
+    def _render_a_sheet(self, instance, sheet,
+                        x_in_column=0,
+                        y_in_column=1):
+
+        points = zip(sheet.column[x_in_column],
+                     sheet.column[y_in_column])
+        if not PY2:
+            points = list(points)
+        instance.add(sheet.name, points)
 
 
 class ChartManager(PluginManager):
