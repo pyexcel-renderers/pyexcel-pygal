@@ -8,3 +8,7 @@ python:
   - 3.3
   - 2.7
 {%endblock%}
+{% block custom_install %}
+  - if [[ $TRAVIS_PYTHON_VERSION == "2.7" ]]; then pip install ipython==5.4; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "pypy" ]]; then pip install ipython==5.4; fi
+{% endblock%}
