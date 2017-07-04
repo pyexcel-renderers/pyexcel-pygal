@@ -35,10 +35,18 @@ def _notebook_run(path):
     return nb, errors
 
 
-def test_ipynb():
+def _verify_ipynb(ipynb_file):
     if PY2:
         print("Ignored ipynb tests in python 2")
         pass
     else:
-        nb, errors = _notebook_run('notebook/life_expectancy.ipynb')
+        nb, errors = _notebook_run(ipynb_file)
         assert errors == []
+
+
+def test_life_expectancy():
+    _verify_ipynb('notebook/life_expectancy.ipynb')
+
+
+def test_us_migration():
+    _verify_ipynb('notebook/US immigration.ipynb')
