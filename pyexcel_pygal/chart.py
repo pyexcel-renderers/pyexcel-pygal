@@ -111,6 +111,8 @@ class Histogram(Chart):
             histograms = zip(sheet.column[height_in_column],
                              sheet.column[start_in_column],
                              sheet.column[stop_in_column])
+            if PY2 is False:
+                histograms = list(histograms)
             instance.add(sheet.name, histograms)
         chart_content = instance.render()
         return chart_content
