@@ -1,7 +1,8 @@
 import os
 import sys
 import pyexcel as pe
-from filecmp import cmp
+from nose.tools import eq_
+
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
 
@@ -16,7 +17,7 @@ def test_line_chart():
     x_labels = map(str, range(2002, 2013))
     data = {
         'Firefox': [None, None, 0, 16.6, 25, 31, 36.4, 45.5, 46.3, 42.8, 37.1],
-        'Chrome': [None, None, None, None, None, None, 0, 3.9, 10.8, 23.8, 35.3],
+        'Chrome': [None, None, None, None, None, None, 0, 3.9, 10.8, 23.8, 35.3],  # flake8: noqa
         'IE': [85.8, 84.6, 84.7, 74.5, 66, 58.6, 54.7, 44.8, 36.2, 26.6, 20.1],
         'Others': [14.2, 15.4, 15.3, 8.9, 9, 10.4, 8.9, 5.8, 6.7, 6.8, 7.5]
     }
@@ -165,9 +166,22 @@ def test_funnel():
 
 
 def _validate_and_remove(file_name):
-    status = cmp(file_name, _fixture_file(file_name))
-    assert status is True
+    actual_graph = _get_svg_graph_element(file_name)
+    expected_graph = _get_svg_graph_element(_fixture_file(file_name))
+    eq_(actual_graph, expected_graph)
     os.unlink(file_name)
+
+
+def _get_svg_graph_element(file_name):
+    import lxml.etree as etree
+
+    svg = etree.parse(file_name)
+    root = svg.getroot()
+    g = root.find('.//g', namespaces=root.nsmap)
+    xml = etree.tostring(g, pretty_print=True)
+    if PY2 is False:
+        xml = xml.decode('utf-8')
+    return xml
 
 
 def _fixture_file(file_name):

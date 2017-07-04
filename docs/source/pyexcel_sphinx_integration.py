@@ -101,6 +101,7 @@ class PygalWithCode(PygalDirective):
 
         return [docutils.nodes.compound('', *node_list)]
 
+
 def setup(app):
     app.add_directive('pyexcel-chart', PygalDirective)
     app.add_directive('pyexcel-code', PygalWithCode)
