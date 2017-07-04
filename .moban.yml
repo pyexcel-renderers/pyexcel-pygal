@@ -16,3 +16,4 @@ targets:
   - .travis.yml: travis.yml
   - .gitignore: .gitignore.jj2
   - "docs/source/conf.py": "docs/source/conf.py"
+  - "docs/source/index.rst": "docs/source/index.rst.jj2"

@@ -1,18 +1,17 @@
-`pyexcel-chart` - Let you focus on data, instead of file formats
+`pyexcel-pygal` - Let you focus on data, instead of file formats
 ================================================================================
 
 :Author: C.W.
-:Source code: http://github.com/pyexcel/pyexcel-chart.git
-:Issues: http://github.com/pyexcel/pyexcel-chart/issues
+:Source code: http://github.com/pyexcel/pyexcel-pygal.git
+:Issues: http://github.com/pyexcel/pyexcel-pygal/issues
 :License: New BSD License
-:Development: |release|
 :Released: |version|
 :Generated: |today|
 
 Introduction
 -------------
 
-**pyexcel-chart** is a tiny plugin of pyexcel to turn pyexcel data into 
+**pyexcel-pygal** is a tiny plugin of pyexcel to turn pyexcel data into 
 chart graphics using pygal
 
 Installation
@@ -22,15 +21,15 @@ You can install it via pip:
 
 .. code-block:: bash
 
-    $ pip install pyexcel-chart
+    $ pip install pyexcel-pygal
 
 
 or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/pyexcel/pyexcel-chart.git
-    $ cd pyexcel-chart
+    $ git clone https://github.com/pyexcel/pyexcel-pygal.git
+    $ cd pyexcel-pygal
     $ python setup.py install
 
 Content
@@ -38,5 +37,5 @@ Content
 
 .. toctree::
 
-  charts
   usage
+  charts
