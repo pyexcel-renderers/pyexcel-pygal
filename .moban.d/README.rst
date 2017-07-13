@@ -7,5 +7,8 @@
 {%endblock%}
 
 {%block features %}
-**{{name}}** does xyz.
+**{{name}}** {{description}}.
+
+.. image:: https://github.com/pyexcel/pyexcel-pygal/raw/master/pygal-demo.gif
+
 {%endblock%}
