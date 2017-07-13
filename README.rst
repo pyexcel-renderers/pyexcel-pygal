@@ -33,6 +33,8 @@ a little bit more time in coding, documentation and writing interesting posts.
 
 
 
+Introduction
+================================================================================
 **pyexcel-pygal** draw simple svg chart via pygal.
 
 .. image:: https://github.com/pyexcel/pyexcel-pygal/raw/master/pygal-demo.gif
