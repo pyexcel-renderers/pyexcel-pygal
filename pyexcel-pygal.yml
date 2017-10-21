@@ -1,9 +1,10 @@
 overrides: "pyexcel.yaml"
+organisation: "pyexcel-renderers"
 name: "pyexcel-pygal"
 nick_name: "pygal"
-version: "0.0.1"
-current_version: "0.0.1"
-release: "0.0.1"
+version: "0.0.2"
+current_version: "0.0.2"
+release: "0.0.2"
 dependencies:
   - pygal
 description: "draw simple svg chart via pygal"

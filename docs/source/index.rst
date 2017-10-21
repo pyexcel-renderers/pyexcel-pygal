@@ -2,8 +2,8 @@
 ================================================================================
 
 :Author: C.W.
-:Source code: http://github.com/pyexcel/pyexcel-pygal.git
-:Issues: http://github.com/pyexcel/pyexcel-pygal/issues
+:Source code: http://github.com/pyexcel-renderers/pyexcel-pygal.git
+:Issues: http://github.com/pyexcel-renderers/pyexcel-pygal/issues
 :License: New BSD License
 :Released: |version|
 :Generated: |today|
@@ -20,7 +20,8 @@ on `github folder <https://github.com/pyexcel/pyexcel-pygal/tree/master/notebook
 Installation
 -------------
 
-You can install it via pip:
+
+You can install pyexcel-pygal via pip:
 
 .. code-block:: bash
 
@@ -31,7 +32,7 @@ or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/pyexcel/pyexcel-pygal.git
+    $ git clone https://github.com/pyexcel-renderers/pyexcel-pygal.git
     $ cd pyexcel-pygal
     $ python setup.py install
 
