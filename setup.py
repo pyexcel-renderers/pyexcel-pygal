@@ -50,6 +50,7 @@ PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
 GS_COMMAND = ('gs pyexcel-pygal v0.0.2 ' +
               "Find 0.0.2 in changelog for more details")
+# You do not need to read beyond this line
 here = os.path.abspath(os.path.dirname(__file__))
 
 
