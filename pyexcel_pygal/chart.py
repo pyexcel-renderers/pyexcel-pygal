@@ -32,6 +32,22 @@ CHART_TYPES = dict(
     histogram='Histogram')
 
 
+class ChartManager(PluginManager):
+    def __init__(self):
+        PluginManager.__init__(self, 'chart')
+
+    def get_a_plugin(self, key, **keywords):
+        self._logger.debug("get a plugin called")
+        plugin = self.load_me_now(key)
+        return plugin(key)
+
+    def raise_exception(self, key):
+        raise Exception("No support for " + key)
+
+
+MANAGER = ChartManager()
+
+
 class Chart(object):
 
     def __init__(self, cls_name):
@@ -167,22 +183,6 @@ class XY(Chart):
         if not PY2:
             points = list(points)
         instance.add(sheet.name, points)
-
-
-class ChartManager(PluginManager):
-    def __init__(self):
-        PluginManager.__init__(self, 'chart')
-
-    def get_a_plugin(self, key, **keywords):
-        self._logger.debug("get a plugin called")
-        plugin = self.load_me_now(key)
-        return plugin(key)
-
-    def raise_exception(self, key):
-        raise Exception("No support for " + key)
-
-
-MANAGER = ChartManager()
 
 
 class ChartRenderer(BinaryRenderer):
